@@ -1,8 +1,8 @@
-# Nuxt 3 + TypeScript + Tailwind + PWA
+# Nuxt 3 + TypeScript + Tailwind + Nitro
 
 **💬 About.** 
 
-Buy Now projeto App. Nuxt 3, Typescript, Tailwind CSS, PWA e bibliotecas adicionais.
+Comforty, Projeto E-Commerce: Nuxt3, Nitro e Biblioteca adicionais.
 
 **👇 Follow the steps.** 
 
