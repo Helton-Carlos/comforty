@@ -12,7 +12,7 @@ export default {
       gray: '#F0F2F3',
     },
     fontSize: {
-      sm: '0.75rem',
+      sm: '0.813rem',
       base: '1rem',
       xl: '1.12rem',
       '2xl': '1.5rem',
