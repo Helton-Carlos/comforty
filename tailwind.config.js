@@ -14,13 +14,12 @@ export default {
     fontSize: {
       sm: '0.813rem',
       base: '1rem',
-      xl: '1.12rem',
-      '2xl': '1.5rem',
+      xl: '1.625rem',
+      '2xl': '2.805rem',
       '3xl': '4.37rem',
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
-      serif: ['Inter', 'serif'],
     },
     extend: {
       spacing: {

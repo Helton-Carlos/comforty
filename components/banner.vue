@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[45px] bg-purple text-white text-sm p-3">
+  <div class="w-full h-[45px] bg-purple text-white text-sm py-3">
     <div class="w-[80%] flex justify-between items-center mx-auto">
       <div class="flex items-center gap-1">
         <IconCheck />
