@@ -1,0 +1,39 @@
+<script setup lang="ts">
+const menuList = ref<string[]>([
+  'Home',
+  'Shop',
+  'Produtos',
+  'Páginas',
+  'Sobre',
+]);
+</script>
+
+<template>
+  <div class="w-full h-[75px] bg-white border-x-gray text-purple text-sm py-5">
+    <div class="w-[80%] flex justify-between items-center mx-auto">
+      <div class="flex gap-8">
+        <button
+          class="bg-white flex items-center gap-2 p-2.5 rounded-md font-bold border-2 border-gray"
+        >
+          <IconMenu />
+          Categorias
+        </button>
+
+        <ul
+          class="flex items-center gap-2"
+          v-for="list in menuList"
+          :key="list"
+        >
+          <li class="font-bold cursor-pointer hover:text-primary">
+            {{ list }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-sm flex gap-2">
+        <p class="text-gray-dark">Contato:</p>
+        <p class="text-purple font-bold">(82) 3355-0111</p>
+      </div>
+    </div>
+  </div>
+</template>
