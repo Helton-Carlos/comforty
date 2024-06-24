@@ -11,6 +11,11 @@ export default {
       'gray-dark': '#9A9CAA',
       gray: '#F0F2F3',
     },
+    extend: {
+      backgroundImage: {
+        banner: "url('assets/imagem/banner-1.png')",
+      },
+    },
     fontSize: {
       sm: '0.813rem',
       base: '1rem',
@@ -25,6 +30,9 @@ export default {
       spacing: {
         '8xl': '98rem',
         '9xl': '128rem',
+      },
+      letterSpacing: {
+        tighter: '-0.05em;',
       },
       borderRadius: {
         '4xl': '1.8rem',

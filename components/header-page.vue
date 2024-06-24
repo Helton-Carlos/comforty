@@ -10,7 +10,7 @@
 
       <div>
         <input
-          class="w-full text-purple rounded-md p-3.5 my-3 lg:mx-2 lg:w-[413px]"
+          class="w-full text-purple rounded-md p-3.5 my-3 lg:mx-2 lg:w-[413px] outline-none"
           type="text"
           placeholder="Pesquisar..."
         />

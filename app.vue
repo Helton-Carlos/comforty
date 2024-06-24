@@ -1,12 +1,7 @@
 <template>
   <div>
     <NuxtLayout>
-      <h1 class="bg-primary text-gray px-4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi voluptate
-        fuga amet nostrum natus quis, voluptatum iusto accusantium quia impedit
-        voluptatibus, corrupti dicta error ipsum animi nisi? Harum, vel
-        veritatis.
-      </h1>
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>

@@ -9,7 +9,7 @@ const menuList = ref<string[]>([
 </script>
 
 <template>
-  <div class="w-full h-[75px] bg-white border-x-gray text-purple text-sm py-5">
+  <div class="w-full bg-white border-2 border-gray text-purple text-sm py-4">
     <div class="w-[80%] flex justify-between items-center mx-auto">
       <div class="flex gap-2 md:gap-8">
         <button
