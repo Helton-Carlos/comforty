@@ -16,16 +16,18 @@ const chairList = [
         <IconArrowLeft class="my-3.5 mx-3.5" />
       </div>
 
-      <div class="mt-8 flex gap-10">
-        <div class="w-[370px]">
-          <div class="my-8">
-            <p class="text-left font-medium mb-2">Seja bem-vindo.</p>
-            <h3 class="text-2xl font-bold tracking-tight leading-10">
+      <div class="pl-4 flex md:gap-10 md:mt-8">
+        <div class="md:w-[370px]">
+          <div class="my-8 text-center md:text-left">
+            <p class="font-medium mb-2">Seja bem-vindo.</p>
+            
+            <h3 class="text-xl font-bold tracking-tight leading-10 md:text-2xl">
               Melhores móveis, Coleção para seu interior.
             </h3>
           </div>
+
           <button
-            class="bg-primary flex gap-2 mt-4 text-white rounded-md p-2 px-4 hover:bg-green"
+            class="bg-primary mx-auto flex gap-2 mt-4 text-white rounded-md p-2 px-4 md:mx-0 hover:bg-green"
           >
             <span>Veja mais</span>
             <IconArrowNext />
@@ -33,7 +35,11 @@ const chairList = [
         </div>
 
         <div>
-          <img :src="chairList[0].path" :alt="chairList[0].name" />
+          <img 
+            class="hidden md:block" 
+            :src="chairList[0].path" 
+            :alt="chairList[0].name" 
+          />
         </div>
       </div>
 
