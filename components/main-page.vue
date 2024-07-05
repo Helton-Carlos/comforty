@@ -9,9 +9,9 @@ const chairList = [
 
 <template>
   <main
-    class="w-[90%] mx-auto p-4 py-8 bg-[url('assets/imagem/banner.png')] bg-no-repeat bg-center bg-cover"
+    class="w-[90%] mx-auto p-4 py-8 bg-[url('assets/imagem/banner.png')] bg-no-repeat bg-center bg-cover lg:w-[60%]"
   >
-    <div class="flex justify-between items-center p-8">
+    <div class="flex justify-between items-center px-2 py-8">
       <div class="bg-white w-[48px] h-[48px] rounded-full text-white m-2">
         <IconArrowLeft class="my-3.5 mx-3.5" />
       </div>

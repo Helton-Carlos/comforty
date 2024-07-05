@@ -3,14 +3,21 @@ import chairImage from '~/assets/product/Chair_image.png';
 import chairPlastic from '~/assets/product/Chair_Plastic_orange.png';
 import chairPlasticWhite from '~/assets/product/Chair_Plastic_white.png';
 import chairLibrary from '~/assets/product/Library_Stool_ Chair.png';
-import { convertMoney } from '~/utils/convertMoney';
-import type { IProduct } from '~/types/types';
+import chairImage1 from '~/assets/categories/chair_categories_1.png';
+import chairImage2 from '~/assets/categories/chair_categories_2.png';
+import chairImage3 from '~/assets/categories/chair_categories_3.png';
+import chairImage4 from '~/assets/categories/chair_categories_4.png';
 
-const chairList = ref<IProduct[]>([
+import { convertMoney } from '~/utils/convertMoney';
+
+const categories = ref<string[]>(['news','trends','comfort','sellers']);
+
+const chairList = ref<any[]>([
   {
     name: 'Chair Plastic',
     price: 99.99,
     categorie: 'Novo',
+    type: 'news',
     image: chairImage
   },
   {
@@ -18,25 +25,58 @@ const chairList = ref<IProduct[]>([
     price: 299.99,
     beforePrice: 350.99,
     categorie: 'Lançamento',
+    type: 'trends',
     image: chairPlastic
   },
   {
     name: 'Chair Plastic White',
     price: 200.99,
+    type: 'comfort',
     beforePrice: 320.99,
     image: chairPlasticWhite
   },
   {
     name: 'Chair Wooder',
     price: 250.99,
+    type: 'sellers',
     image: chairLibrary
+  },
+  {
+    name: 'Chair Conforty',
+    price: 299.99,
+    type: 'trends',
+    image: chairImage4
+  },
+  {
+    name: 'Wooden Chair',
+    price: 299.99,
+    type: 'sellers',
+    image: chairImage2
+  },
+  {
+    name: 'Desk Chair',
+    price: 299.99,
+    type: 'comfort',
+    image: chairImage3
+  },
+  {
+    name: 'Wing Chair',
+    price: 299.99,
+    type: 'news',
+    image: chairImage1
   },
 ]);
 </script>
 
 <template>
   <div>
-    <h3 class="font-bold text-xl">Novos Produtos</h3>
+    <h3 class="text-xl font-bold text-center mt-10">Todos Produtos</h3>
+
+    <div class="mx-auto flex justify-center mt-4">
+      <button v-for="cat in categories">
+       <span class="font-medium mx-4 capitalize pb-1 hover:border-b-2 hover:border-b-primary">{{ cat }}</span>
+      </button>
+    </div>
 
     <div class="block md:flex md:justify-between md:flex-wrap md:flex-shrink md:gap-4">
       <div class="w-full md:w-[280px] lg:[300px]" v-for="list in chairList" :key="list.name">

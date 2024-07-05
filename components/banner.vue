@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full bg-purple text-white text-sm py-3">
+  <div class="w-full bg-dark text-white text-sm py-3">
     <div
-      class="w-[80%] block sm:flex sm:justify-between sm:items-center mx-auto"
+      class="w-[80%] block mx-auto sm:flex sm:justify-between sm:items-center lg:w-[55%]"
     >
       <div class="flex items-center gap-1">
         <IconCheck />
