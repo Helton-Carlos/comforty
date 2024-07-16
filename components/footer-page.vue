@@ -30,9 +30,9 @@ const helpList = ref<string[]>([
 
 <template>
   <div class="w-full  text-white border-t-2 border-gray mt-4">
-    <div class="w-[80%] flex justify-between items-start mx-auto py-8 lg:w-[55%]">
+    <div class="w-[80%] block md:flex items-start gap-2 mx-auto py-8 justify-between lg:w-[55%]">
       <div>
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-2 mt-2">
           <IconLogo />
           <h1 class="font-medium text-xl text-dark">Comforty</h1>
         </div>
@@ -43,7 +43,7 @@ const helpList = ref<string[]>([
       </div>
 
       <div>
-        <p class="text-gray-dark font-semibold pb-2">CATEGORIAS</p>
+        <p class="text-gray-dark font-semibold pb-2 mt-2 underline">CATEGORIAS</p>
 
         <div v-for="list in menuList" :key="list">
           <p class="text-dark font-semibold cursor-pointer hover:text-primary">{{ list }}</p>
@@ -51,7 +51,7 @@ const helpList = ref<string[]>([
       </div>
 
       <div>
-        <p class="text-gray-dark font-semibold pb-2">SUPORTE</p>
+        <p class="text-gray-dark font-semibold pb-2 mt-2 underline">SUPORTE</p>
 
         <div v-for="list in helpList" :key="list">
           <p class="text-dark font-semibold cursor-pointer hover:text-primary">{{ list }}</p>
@@ -59,7 +59,7 @@ const helpList = ref<string[]>([
       </div>
 
       <div class="flex flex-col">
-        <p class="text-gray-dark font-semibold pb-2">Newsletter</p>
+        <p class="text-gray-dark font-semibold pb-2 mt-2 underline">Newsletter</p>
 
         <div class="flex items-center">
           <input 
