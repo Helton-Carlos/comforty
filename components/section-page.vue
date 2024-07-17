@@ -40,7 +40,7 @@ const companyList = [
   <div
     class="w-[80%] relative top-[-20px] bg-white border-2 border-gray text-dark text-sm p-4 mx-auto rounded-xl lg:w-[55%]"
   >
-    <div class="flex flex-wrap justify-start gap-8 mx-auto p-2 sm:justify-center md:justify-between md:gap-4">
+    <div class="flex justify-start flex-wrap gap-8 mx-auto p-2 sm:justify-center md:justify-between md:gap-4">
       <div class="flex items-center gap-2"
         v-for="list in serviceList"
         :key="list.title"
