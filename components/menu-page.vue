@@ -1,10 +1,11 @@
 <script setup lang="ts">
-const menuList = ref<string[]>([
-  'Home',
-  'Shop',
-  'Produtos',
-  'Páginas',
-  'Sobre',
+import type { IMenu } from '~/types/types';
+
+const menuList = ref<IMenu[]>([
+  { name: 'Home', path: '/' },
+  { name: 'Shop', path: '/shop' },
+  { name: 'Produtos', path: '/product' },
+  { name: 'Sobre', path: '/about' },
 ]);
 
 const menu = ref<boolean>(false)
@@ -27,9 +28,11 @@ function openMenu() {
           <span class="hidden md:block">Categorias</span>
         </button>
 
-        <ul class="flex items-center" v-for="list in menuList" :key="list">
-          <li class="font-bold cursor-pointer hover:text-primary">
-            {{ list }}
+        <ul class="flex items-center" v-for="list in menuList" :key="list.name">
+          <li class="font-bold cursor-pointer hover:text-primary hover:underline">
+            <nuxt-link :to="list.path">
+              {{ list.name }}
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -51,14 +54,19 @@ function openMenu() {
       </button>
     </div>
     
-    <div class="flex items-center justify-center gap-1 my-7">
+    <nuxt-link to="/" class="flex items-center justify-center gap-1 my-7">
       <IconLogo />
       <h1 class="font-medium text-xl text-dark">Comforty</h1>
-    </div>
+    </nuxt-link>
 
-    <ul class="flex flex-col items-center" v-for="list in menuList" :key="list">
+    <ul class="flex flex-col items-center" v-for="list in menuList" :key="list.name">
       <li class="font-bold text-base cursor-pointer my-4 hover:text-primary hover:underline">
-        {{ list }}
+        <nuxt-link 
+          :to="list.path" 
+          @click="openMenu()"
+        >
+          {{ list.name }}
+        </nuxt-link>
       </li>
       <hr class="w-[50%] mx-auto text-gray"/>
     </ul>

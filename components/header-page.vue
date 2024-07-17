@@ -3,10 +3,10 @@
     <div
       class="w-[80%] block md:flex md:justify-between md:items-center mx-auto lg:w-[55%]"
     >
-      <div class="flex items-center gap-1">
+      <nuxt-link to="/" class="flex items-center gap-1">
         <IconLogo />
         <h1 class="font-medium text-xl text-dark">Comforty</h1>
-      </div>
+      </nuxt-link>
 
       <div>
         <input

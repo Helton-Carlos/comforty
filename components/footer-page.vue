@@ -32,10 +32,10 @@ const helpList = ref<string[]>([
   <div class="w-full text-white border-t-2 border-gray mt-4">
     <div class="w-[80%] block md:flex items-start gap-2 mx-auto py-8 justify-between lg:w-[55%]">
       <div>
-        <div class="flex items-center gap-2 mt-2">
+        <nuxt-link to="/" class="flex items-center gap-2 mt-2">
           <IconLogo />
           <h1 class="font-medium text-xl text-dark">Comforty</h1>
-        </div>
+        </nuxt-link>
 
         <p class="text-gray-dark text-sm py-4 w-[250px]">
           "Comforty oferece conforto e estilo incomparáveis. Cada cadeira combina ergonomia perfeita com design elegante. Descubra a qualidade superior das cadeiras Comforty agora!"
