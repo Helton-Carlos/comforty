@@ -29,8 +29,8 @@ function openMenu() {
         </button>
 
         <ul class="flex items-center" v-for="list in menuList" :key="list.name">
-          <li class="font-bold cursor-pointer hover:text-primary hover:underline">
-            <nuxt-link :to="list.path">
+          <li>
+            <nuxt-link :to="list.path" class="font-bold cursor-pointer hover:text-primary hover:underline" exact current-route dir="routing/pages">
               {{ list.name }}
             </nuxt-link>
           </li>
@@ -73,3 +73,10 @@ function openMenu() {
   </div>
 </div>
 </template>
+
+<style scoped>
+.nuxt-link-exact-active {
+  font-weight: bold;
+  font-size: 25px;
+}
+</style>

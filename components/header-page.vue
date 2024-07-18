@@ -27,7 +27,9 @@
           >
         </button>
         <button class="p-3 rounded-md bg-white"><IconHeart /></button>
-        <button class="p-3 rounded-md bg-white"><IconUser /></button>
+        <button class="p-3 rounded-md bg-white">
+          <nuxt-link to="/user"><IconUser /></nuxt-link>
+        </button>
       </div>
     </div>
   </header>
