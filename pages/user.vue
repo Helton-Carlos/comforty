@@ -27,7 +27,7 @@
         value="Login"
       />
 
-      <p class="font-bold text-base">Ainda não é nosso cliente? <span class="underline text-primary">Cadastre-se</span></p> 
+      <p class="font-bold text-base">Ainda não é nosso cliente? <nuxt-link to="/register" class="underline text-primary cursor-pointer">Cadastre-se</nuxt-link></p> 
     </form>
   </div>
 </template>

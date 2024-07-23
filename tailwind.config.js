@@ -10,6 +10,7 @@ export default {
       orange: '#F05C52',
       'gray-dark': '#9A9CAA',
       gray: '#F0F2F3',
+      red: '#FF0000',
     },
     extend: {
       backgroundImage: {
