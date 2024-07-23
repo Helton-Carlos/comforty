@@ -27,10 +27,15 @@ const chairList = [
           </div>
 
           <button
-            class="bg-primary mx-auto flex gap-2 mt-4 text-white rounded-md p-2 px-4 md:mx-0 hover:bg-green"
+            class="bg-primary mt-4 rounded-md p-2 px-4 md:mx-0 hover:bg-green"
           >
-            <span>Veja mais</span>
-            <IconArrowNext />
+            <nuxt-link 
+              to="/product" 
+              class=" mx-auto flex text-white gap-2"
+            >
+              <span>Veja mais</span>
+              <IconArrowNext />
+            </nuxt-link>
           </button>
         </div>
 

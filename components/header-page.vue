@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <header class="w-full bg-gray text-white text-sm py-5">
     <div
@@ -27,7 +30,13 @@
           >
         </button>
         <button class="p-3 rounded-md bg-white"><IconHeart /></button>
-        <button class="p-3 rounded-md bg-white">
+        <button 
+          :class="{
+            'p-3 rounded-md hover:bg-primary': true,
+            'bg-primary': $route.path === '/user',
+            'bg-white': $route.path !== '/user'
+          }"
+        >
           <nuxt-link to="/user"><IconUser /></nuxt-link>
         </button>
       </div>

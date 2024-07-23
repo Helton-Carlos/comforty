@@ -30,7 +30,10 @@ function openMenu() {
 
         <ul class="flex items-center" v-for="list in menuList" :key="list.name">
           <li>
-            <nuxt-link :to="list.path" class="font-bold cursor-pointer hover:text-primary hover:underline" exact current-route dir="routing/pages">
+            <nuxt-link 
+              :to="list.path"
+              :class="['font-bold cursor-pointer hover:text-primary hover:underline', { 'text-primary underline': $route.path === list.path }]"
+            >
               {{ list.name }}
             </nuxt-link>
           </li>
@@ -60,7 +63,7 @@ function openMenu() {
     </nuxt-link>
 
     <ul class="flex flex-col items-center" v-for="list in menuList" :key="list.name">
-      <li class="font-bold text-base cursor-pointer my-4 hover:text-primary hover:underline">
+      <li :class="['font-bold text-base cursor-pointer my-4 hover:text-primary hover:underline', { 'text-primary underline': $route.path === list.path }]">
         <nuxt-link 
           :to="list.path" 
           @click="openMenu()"
