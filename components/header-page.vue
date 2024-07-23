@@ -29,16 +29,19 @@
             >0</span
           >
         </button>
+        
         <button class="p-3 rounded-md bg-white"><IconHeart /></button>
-        <button 
+
+        <nuxt-link 
           :class="{
             'p-3 rounded-md hover:bg-primary': true,
             'bg-primary': $route.path === '/user',
             'bg-white': $route.path !== '/user'
           }"
+          to="/user"
         >
-          <nuxt-link to="/user"><IconUser /></nuxt-link>
-        </button>
+          <IconUser />
+        </nuxt-link>
       </div>
     </div>
   </header>

@@ -31,7 +31,11 @@ function submit() {
 
 <template>
   <div class="w-[80%] mx-auto my-10 py-8 flex justify-center lg:w-[55%]">
-    <form class="w-[380px] bg-gray flex flex-col gap-2 p-4" @submit.prevent="submit()">
+    <form  
+      class="w-[380px] bg-gray flex flex-col gap-2 p-4" 
+      @submit.prevent="submit()"
+    >
+
       <label for="email">Nome:</label>
       <input 
         class="p-2 rounded shadow"
@@ -80,14 +84,19 @@ function submit() {
         value="Salvar"
       />
 
-      <nuxt-link to="/user" class="text-center text-primary cursor-pointer hover:underline">
+      <nuxt-link 
+        class="text-center text-primary cursor-pointer hover:underline"
+        to="/user" 
+      >
         Voltar
       </nuxt-link>
 
-      <div v-if="message.title" :class="['px-2 py-1 text-center rounded-lg shadow', message.style ]">
+      <div 
+        v-if="message.title" 
+        :class="['px-2 py-1 text-center rounded-lg shadow', message.style ]"
+      >
         <p class="text-white">{{ message.title }}</p>
       </div>
     </form>
-    
   </div>
 </template>
