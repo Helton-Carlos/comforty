@@ -28,7 +28,11 @@ function openMenu() {
           <span class="hidden md:block">Categorias</span>
         </button>
 
-        <ul class="flex items-center" v-for="list in menuList" :key="list.name">
+        <ul 
+          class="flex items-center" 
+          v-for="list in menuList" 
+          :key="list.name"
+        >
           <li>
             <nuxt-link 
               :to="list.path"

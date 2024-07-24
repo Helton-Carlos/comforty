@@ -38,9 +38,9 @@ const chairList = ref<IProduct[]>([
   <div>
     <h3 class="font-bold text-xl">Novos Produtos</h3>
 
-    <div class="block md:flex md:justify-between md:flex-wrap md:flex-shrink md:gap-4">
+    <div class="block md:flex md:justify-center md:flex-wrap md:flex-shrink md:gap-4">
       <div class="w-full md:w-[280px] lg:[300px]" v-for="list in chairList" :key="list.name">
-        <div >
+        <div>
           <div class="relative top-14 pt-4 px-4 flex justify-between items-start">
             <span 
               v-if="list.categorie"

@@ -4,7 +4,7 @@
 <template>
   <header class="w-full bg-gray text-white text-sm py-5">
     <div
-      class="w-[80%] block md:flex md:justify-between md:items-center mx-auto lg:w-[55%]"
+      class="w-[80%] block md:flex md:justify-center md:items-center mx-auto lg:w-[55%]"
     >
       <nuxt-link to="/" class="flex items-center gap-1">
         <IconLogo />
