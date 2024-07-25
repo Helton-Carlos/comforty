@@ -4,9 +4,9 @@ import banner2 from '~/assets/imagem/poltrona-cama.png';
 import banner3 from '~/assets/imagem/poltrona.png';
 
 const chairList = [
-  { path: banner1, name: 'cadeira retro' },
-  { path: banner2, name: 'poltrona retro1' },
-  { path: banner3, name: 'poltrona retro2' },
+  { title: 'Seja bem-vindo.', subTitle: 'Melhores móveis, Coleção para seu interior.', path: banner1, name: 'cadeira retro' },
+  { title: 'Seu conforto.', subTitle: 'Nossa prioridade é deixar seu lar confortavel.', path: banner2, name: 'poltrona retro1' },
+  { title: 'Design  rústico.', subTitle: 'Além de cadeiras modernas, temos versão rústica.', path: banner3, name: 'poltrona retro2' },
 ];
 
 const image = ref<number>(0);
@@ -37,16 +37,16 @@ function increment(): void {
         class="hidden md:block bg-white w-[48px] h-[48px] rounded-full text-white m-2 hover:bg-primary" 
         @click="decrement "
       >
-        <IconArrowLeft class="my-3.5 mx-3"  />
+        <IconArrowLeft class="my-3.5 mx-3" />
       </div>
 
       <div class="pl-4 flex md:gap-10 md:mt-8">
         <div class="md:w-[370px]">
           <div class="my-8 text-center md:text-left">
-            <p class="font-medium mb-2">Seja bem-vindo.</p>
+            <p class="font-medium mb-2">{{chairList[image].title}}</p>
             
             <h3 class="text-xl font-bold tracking-tight leading-10 md:text-xl lg:text-2xl">
-              Melhores móveis, Coleção para seu interior.
+              {{chairList[image].subTitle}}
             </h3>
           </div>
 
@@ -81,9 +81,9 @@ function increment(): void {
     </div>
 
     <div class="hidden md:flex md:justify-center md:gap-2">
-      <div :class="['bg-gray-dark w-[8px] h-[8px] rounded-full', { 'bg-primary' : image === 0 }]"></div>
-      <div :class="['bg-gray-dark w-[8px] h-[8px] rounded-full', { 'bg-primary' : image === 1 }]"></div>
-      <div :class="['bg-gray-dark w-[8px] h-[8px] rounded-full', { 'bg-primary' : image === 2 }]"></div>
+      <canvas :class="['bg-gray-dark w-[8px] h-[8px] rounded-full', { 'bg-primary' : image === 0 }]" />
+      <canvas :class="['bg-gray-dark w-[8px] h-[8px] rounded-full', { 'bg-primary' : image === 1 }]" />
+      <canvas :class="['bg-gray-dark w-[8px] h-[8px] rounded-full', { 'bg-primary' : image === 2 }]" />
     </div>
   </main>
 </template>

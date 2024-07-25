@@ -22,6 +22,7 @@
       <div class="flex gap-4">
         <button
           class="w-full p-3 flex items-center gap-2 bg-white text-dark font-medium rounded-md"
+          aria-label="Carro-de-compras"
         >
           <IconCart />Carrinho
           <span
@@ -30,7 +31,7 @@
           >
         </button>
         
-        <button class="p-3 rounded-md bg-white"><IconHeart /></button>
+        <button class="p-3 rounded-md bg-white" aria-label="Favoritos"><IconHeart /></button>
 
         <nuxt-link 
           :class="{
