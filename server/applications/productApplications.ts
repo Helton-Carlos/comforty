@@ -1,6 +1,9 @@
+import { H3Event } from 'h3';
 import type { IProduct } from '~/types/types';
 
-export default defineEventHandler (() => {
+export const getProduct = (event: H3Event) => {
+  setResponseStatus(event, 200);
+
   const products: IProduct[] = [
     {
       name: 'chair plastic',
@@ -39,4 +42,4 @@ export default defineEventHandler (() => {
   return {
     products
   }
-})
+}
