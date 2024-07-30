@@ -30,7 +30,7 @@ const helpList = ref<string[]>([
 
 <template>
   <div class="w-full text-white border-t-2 border-gray mt-4">
-    <div class="w-[80%] block md:flex items-start gap-2 mx-auto py-8 justify-between lg:w-[55%]">
+    <div class="w-[85%] block md:flex items-start gap-2 mx-auto py-8 justify-between lg:w-[57%]">
       <div>
         <nuxt-link to="/" class="flex items-center gap-2 mt-2">
           <IconLogo />
@@ -78,7 +78,7 @@ const helpList = ref<string[]>([
     </div>
 
     <div class="border-t-2 border-gray flex justify-between items-center py-4">
-      <div class="w-[80%] flex justify-between mx-auto lg:w-[55%]">
+      <div class="w-[85%] flex justify-between mx-auto lg:w-[57%]">
         <p class="text-gray-dark">@ 2024 - Helton Brito - Front-End</p>
 
         <div  class="flex items-center gap-4">

@@ -1,5 +1,5 @@
 <template>
-   <div class="w-[80%] mx-auto py-8 lg:w-[55%]">
+   <div class="w-[85%] mx-auto py-8 lg:w-[57%]">
     <div>
       <h3 class="font-bold text-xl">Sobre</h3>
       <p class="font-normal italic">

@@ -18,7 +18,7 @@ function openMenu() {
 <template>
 <div>
   <div class="w-full bg-white border-2 border-gray text-dark text-sm py-4">
-    <div class="w-[80%] flex justify-between items-center mx-auto lg:w-[55%]">
+    <div class="w-[85%] flex justify-between items-center mx-auto lg:w-[57%]">
       <div class="flex gap-2 md:gap-8">
         <button
           class="bg-white flex items-center gap-2 p-2.5 rounded-md font-bold border-2 border-gray"

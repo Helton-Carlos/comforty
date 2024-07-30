@@ -30,7 +30,7 @@ function submit() {
 </script>
 
 <template>
-  <div class="w-[80%] mx-auto my-10 py-8 flex justify-center lg:w-[55%]">
+  <div class="w-[85%] mx-auto my-10 py-8 flex justify-center lg:w-[57%]">
     <form  
       class="w-[380px] bg-gray flex flex-col gap-2 p-4" 
       @submit.prevent="submit()"

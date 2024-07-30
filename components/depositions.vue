@@ -2,8 +2,9 @@
 import aspasDuplas from '~/assets/imagem/aspas.png';
 import persona1 from '~/assets/imagem/persona-1.png';
 import persona2 from '~/assets/imagem/persona-2.png';
+import type { IDepositions } from '~/types/types';
 
-const listDepositions = ref<any[]>([
+const listDepositions = ref<IDepositions[]>([
   {
     depositions: '“A Comforty é surpreendente! Suas cadeiras combinam conforto e estilo perfeitamente. A equipe é acolhedora e conhecedora, oferecendo uma variedade incrível de designs ergonômicos e duráveis. Recomendo sem hesitar!“',
     image: persona1,
@@ -21,7 +22,7 @@ const listDepositions = ref<any[]>([
 
 <template>
   <div class="w-full bg-gray mt-10">
-    <div class="w-[80%] mx-auto py-4 lg:w-[55%]">
+    <div class="w-[85%] mx-auto py-4 lg:w-[57%]">
       <h3 class="font-bold text-xl my-8">
         Depoimentos dos nossos clientes
       </h3>

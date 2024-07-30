@@ -38,7 +38,7 @@ const companyList = [
 <template>
  <div>
   <div
-    class="w-[80%] relative top-[-20px] bg-white border-2 border-gray text-dark text-sm p-4 mx-auto rounded-xl lg:w-[55%]"
+    class="w-[85%] relative top-[-20px] bg-white border-2 border-gray text-dark text-sm p-4 mx-auto rounded-xl lg:w-[57%]"
   >
     <div class="flex justify-start flex-wrap gap-8 mx-auto p-2 sm:justify-center md:justify-between md:gap-4">
       <div class="flex items-center gap-2"
@@ -56,7 +56,7 @@ const companyList = [
   </div>
 
   <div
-    class="w-[80%] bg-white border-2 border-gray text-dark text-sm px-8 mx-auto rounded-xl lg:w-[55%]"
+    class="w-[85%] bg-white border-2 border-gray text-dark text-sm px-8 mx-auto rounded-xl lg:w-[57%]"
   >
     <div class="flex flex-wrap justify-center gap-8 mx-auto lg:justify-between md:gap-4">
       <div class="flex items-center gap-2"

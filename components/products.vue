@@ -1,51 +1,38 @@
 <script setup lang="ts">
-import chairImage from '~/assets/product/Chair_image.png';
-import chairPlastic from '~/assets/product/Chair_Plastic_orange.png';
-import chairPlasticWhite from '~/assets/product/Chair_Plastic_white.png';
-import chairLibrary from '~/assets/product/Library_Stool_ Chair.png';
 import { convertMoney } from '~/utils/convertMoney';
 import type { IProduct } from '~/types/types';
 
-const chairList = ref<IProduct[]>([
-  {
-    name: 'Chair Plastic',
-    price: 99.99,
-    categorie: 'Novo',
-    image: chairImage
-  },
-  {
-    name: 'Chair Plastic Orange',
-    price: 299.99,
-    beforePrice: 350.99,
-    categorie: 'Lançamento',
-    image: chairPlastic
-  },
-  {
-    name: 'Chair Plastic White',
-    price: 200.99,
-    beforePrice: 320.99,
-    image: chairPlasticWhite
-  },
-  {
-    name: 'Chair Wooder',
-    price: 250.99,
-    image: chairLibrary
-  },
-]);
+defineProps<{
+  listProduct: IProduct[];
+}>();
+
+const emit = defineEmits<{
+  (e: 'buyProduct'): IProduct[];
+}>();
+
+function buyProduct(product: IProduct) {
+  emit('buyProduct', product);
+}
 </script>
 
 <template>
   <div>
-    <h3 class="font-bold text-xl">Nossos produtos</h3>
-
-    <div class="block md:flex md:justify-center md:flex-wrap md:flex-shrink md:gap-4">
-      <div class="w-full md:w-[280px] lg:[300px]" v-for="list in chairList" :key="list.name">
-        <div >
+    <div class="block md:flex md:justify-center md:flex-wrap md:flex-shrink md:gap-7">
+      <div 
+        class="w-full md:w-[280px] lg:[300px]" 
+        v-for="list in listProduct" :key="list.name"
+      >
+        <div>
           <div class="relative top-14 pt-4 px-4 flex justify-between items-start">
             <span 
               v-if="list.categorie"
-              class="text-white px-3 py-1 rounded-full text-sm"
-              :class="list.categorie === 'Novo' ? 'bg-primary' : 'bg-orange'"
+              :class="[
+                'text-white px-3 py-1 rounded-full text-sm',
+                {'bg-green' : list.categorie === 'novo' },
+                {'bg-primary' : list.categorie === 'lançamento' },
+                {'bg-orange' : list.categorie === 'comforto' },
+                {'bg-dark' : list.categorie === 'mais vendidos' },
+              ]"
             >
               {{ list.categorie }}
             </span>
@@ -59,10 +46,10 @@ const chairList = ref<IProduct[]>([
         <div class="flex justify-between pt-2">
           <div>
             <p class="text-primary font-medium">{{ list.name }}</p>
-            <p class="text-black font-bold">{{ convertMoney(list.price) }}</p>
+            <p class="text-black font-bold" v-if="list.price">{{ convertMoney(list.price) }}</p>
           </div>
 
-          <button class="p-1 px-3 rounded-md bg-gray hover:bg-primary">
+          <button class="p-1 px-3 rounded-md bg-gray hover:bg-primary" @click="buyProduct(list)">
             <IconCart />
           </button>
         </div>

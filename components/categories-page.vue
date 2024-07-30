@@ -4,8 +4,9 @@ import chairImage2 from '~/assets/categories/chair_categories_2.png';
 import chairImage3 from '~/assets/categories/chair_categories_3.png';
 import chairImage4 from '~/assets/categories/chair_categories_4.png';
 import chairImage5 from '~/assets/categories/chair_categories_5.png';
+import type { IProduct } from '~/types/types';
 
-const chairList = ref<any[]>([
+const chairList = ref<IProduct[]>([
   {
     name: 'Chair Conforty',
     unid: 3.584,
@@ -36,7 +37,7 @@ const chairList = ref<any[]>([
 
 <template>
   <div>
-    <div class="w-[80%] mx-auto pb-10 lg:w-[55%]">
+    <div class="w-[85%] mx-auto pb-10 lg:w-[57%]">
       <h3 class="text-xl font-bold pt-8">Top 5 categorias</h3>
     </div>
 

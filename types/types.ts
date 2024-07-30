@@ -1,6 +1,6 @@
 export interface IProduct {
   name: string,
-  price: number,
+  price?: number,
   beforePrice?: number | null,
   categorie?: string,
   image: string,
@@ -10,5 +10,12 @@ export interface IProduct {
 export interface IMenu {
   name: string,
   path: string,
+}
+
+export interface IDepositions {
+  depositions: string,
+  image: string,
+  name: string,
+  job: string
 }
 
