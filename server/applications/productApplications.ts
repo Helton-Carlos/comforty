@@ -10,7 +10,7 @@ export const getProduct = (event: H3Event) => {
       price: 99.99,
       beforePrice: null,
       categorie: 'novo',
-      image: '../../assets/product/Chair_image.png',
+      image: 'chairImage',
       unid: 1.127,
     },
     {
@@ -18,7 +18,7 @@ export const getProduct = (event: H3Event) => {
       price: 299.99,
       beforePrice: 350.99,
       categorie: 'lançamento',
-      image: '../../assets/product/Chair_Plastic_orange.png',
+      image: 'chairPlastic',
       unid: 3.584,
     },
     {
@@ -26,7 +26,7 @@ export const getProduct = (event: H3Event) => {
       price: 200.99,
       beforePrice: 320.99,
       categorie: 'padrao',
-      image: '../../assets/product/Chair_Plastic_white.png',
+      image: 'chairPlasticWhite',
       unid: 1.574,
     },
     {
@@ -34,7 +34,7 @@ export const getProduct = (event: H3Event) => {
       price: 250.99,
       beforePrice: null,
       categorie: 'padrao',
-      image: '../../assets/product/Library_Stool_ Chair.png',
+      image: 'chairLibrary',
       unid: 3.512,
     },
   ];
