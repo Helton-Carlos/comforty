@@ -1,10 +1,9 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header class="w-full bg-gray text-white text-sm py-5">
     <div
-      class="w-[85%] block md:flex md:justify-center md:items-center mx-auto lg:w-[57%]"
+      class="w-[85%] block md:flex md:justify-center md:items-center mx-auto lg:w-[70%]"
     >
       <nuxt-link to="/" class="flex items-center gap-1">
         <IconLogo />
@@ -30,14 +29,16 @@
             >0</span
           >
         </button>
-        
-        <button class="p-3 rounded-md bg-white" aria-label="Favoritos"><IconHeart /></button>
 
-        <nuxt-link 
+        <button class="p-3 rounded-md bg-white" aria-label="Favoritos">
+          <IconHeart />
+        </button>
+
+        <nuxt-link
           :class="{
             'p-3 rounded-md hover:bg-primary': true,
             'bg-primary': $route.path === '/user',
-            'bg-white': $route.path !== '/user'
+            'bg-white': $route.path !== '/user',
           }"
           to="/user"
         >

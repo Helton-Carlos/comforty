@@ -30,42 +30,46 @@ const serviceList = [
   },
 ];
 
-const companyList = [
-  Logo1, Logo2, Logo3, Logo4, Logo5, Logo6
-];
+const companyList = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
 </script>
 
 <template>
- <div>
-  <div
-    class="w-[85%] relative top-[-20px] bg-white border-2 border-gray text-dark text-sm p-4 mx-auto rounded-xl lg:w-[57%]"
-  >
-    <div class="flex justify-start flex-wrap gap-8 mx-auto p-2 sm:justify-center md:justify-between md:gap-4">
-      <div class="flex items-center gap-2"
-        v-for="list in serviceList"
-        :key="list.title"
+  <div>
+    <div
+      class="w-[85%] relative top-[-20px] bg-white border-2 border-gray text-dark text-sm p-4 mx-auto rounded-xl lg:w-[65%]"
+    >
+      <div
+        class="flex justify-start flex-wrap gap-8 mx-auto p-2 sm:justify-center md:justify-center"
       >
-        <img :src="list.image" :alt="list.title" />
+        <div
+          class="flex items-center gap-2"
+          v-for="list in serviceList"
+          :key="list.title"
+        >
+          <img :src="list.image" :alt="list.title" />
 
-        <div>
-          <p class="font-bold">{{ list.title }}</p>
-          <p>{{ list.subtitle }}</p>
+          <div>
+            <p class="font-bold">{{ list.title }}</p>
+            <p>{{ list.subtitle }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-[85%] bg-white border-2 border-gray text-dark text-sm px-8 mx-auto rounded-xl lg:w-[70%]"
+    >
+      <div
+        class="flex flex-wrap justify-center gap-8 mx-auto lg:justify-between md:gap-4"
+      >
+        <div
+          class="flex items-center gap-2"
+          v-for="list in companyList"
+          :key="list"
+        >
+          <img :src="list" :alt="list" />
         </div>
       </div>
     </div>
   </div>
-
-  <div
-    class="w-[85%] bg-white border-2 border-gray text-dark text-sm px-8 mx-auto rounded-xl lg:w-[57%]"
-  >
-    <div class="flex flex-wrap justify-center gap-8 mx-auto lg:justify-between md:gap-4">
-      <div class="flex items-center gap-2"
-        v-for="list in companyList"
-        :key="list"
-      >
-        <img :src="list" :alt="list" />
-      </div>
-    </div>
-  </div>
- </div>
 </template>

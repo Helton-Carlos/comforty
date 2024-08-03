@@ -11,24 +11,24 @@ const chairList = ref<IProduct[]>([
     price: 299.99,
     beforePrice: 350.99,
     categorie: 'lançamento',
-    image: chairPlastic
+    image: chairPlastic,
   },
   {
     name: 'Chair Plastic White',
     price: 200.99,
     beforePrice: 320.99,
-    image: chairPlasticWhite
+    image: chairPlasticWhite,
   },
   {
     name: 'Chair Wooder',
     price: 250.99,
-    image: chairLibrary
+    image: chairLibrary,
   },
   {
     name: 'Chair Plastic',
     price: 99.99,
     categorie: 'novo',
-    image: chairImage
+    image: chairImage,
   },
 ]);
 
@@ -37,12 +37,9 @@ function buyProduct(product: IProduct) {
 }
 </script>
 <template>
-  <div class="w-[85%] mx-auto py-8 lg:w-[57%]">
+  <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
     <h3 class="font-bold text-xl">Novos Produtos</h3>
 
-    <products 
-      :list-product="chairList"
-      @buyProduct="buyProduct"
-    />
+    <products :list-product="chairList" @buyProduct="buyProduct" />
   </div>
 </template>

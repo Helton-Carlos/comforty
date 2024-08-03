@@ -61,7 +61,7 @@ function buyProduct(product: IProduct) {
     <sectionPage />
 
     <div>
-      <div class="w-[85%] mx-auto py-8 lg:w-[57%]">
+      <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
         <h3 class="text-xl font-bold text-center mt-10">Nossos Produtos</h3>
 
         <div v-if="pending">
@@ -77,7 +77,7 @@ function buyProduct(product: IProduct) {
 
       <categoriesPage />
 
-      <div class="w-[85%] mx-auto py-8 lg:w-[57%]">
+      <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
         <h3 class="text-xl font-bold text-center mt-10">Todos Produtos</h3>
 
         <div class="mx-auto flex justify-center mt-4">
@@ -101,7 +101,7 @@ function buyProduct(product: IProduct) {
 
       <depositions />
 
-      <div class="w-[85%] mx-auto py-8 lg:w-[57%]">
+      <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
         <h3 class="font-bold text-xl">Novidades da loja</h3>
 
         <products :listProduct="getProduct" @buyProduct="buyProduct" />
