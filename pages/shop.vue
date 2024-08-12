@@ -35,11 +35,19 @@ const chairList = ref<IProduct[]>([
 function buyProduct(product: IProduct) {
   console.log(product);
 }
+
+function favoriteProduct(product: IProduct) {
+  console.log(product);
+}
 </script>
 <template>
   <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
     <h3 class="font-bold text-xl">Novos Produtos</h3>
 
-    <products :list-product="chairList" @buyProduct="buyProduct" />
+    <products 
+      :list-product="chairList" 
+      @buyProduct="buyProduct" 
+      @favoriteProduct="favoriteProduct"
+    />
   </div>
 </template>

@@ -7,7 +7,7 @@ import type { IProduct } from '~/types/types';
 import { chairList } from '~/utils/product';
 
 const {
-  data: allProduct,
+  data,
   pending,
   error,
   status,
@@ -15,7 +15,7 @@ const {
   lazy: true,
 });
 
-const imageMap = {
+const imageMap: { [key: string]: string } ={
   chairImage: chairImage,
   chairPlastic: chairPlastic,
   chairPlasticWhite: chairPlasticWhite,
@@ -38,7 +38,7 @@ function filterCategories(categorie: string) {
 }
 
 const getProduct = computed(() => {
-  let { products }: any = allProduct.value;
+  let { products }: IProduct[] | any = data.value;
 
   return products.map((product: { image: string }) => ({
     ...product,
@@ -51,6 +51,10 @@ const listProduct = computed(() => {
 });
 
 function buyProduct(product: IProduct) {
+  console.log(product);
+}
+
+function favoriteProduct(product: IProduct) {
   console.log(product);
 }
 </script>
@@ -72,7 +76,11 @@ function buyProduct(product: IProduct) {
           <p>Ocorreu um erro: {{ status }}</p>
         </div>
 
-        <products v-else :listProduct="getProduct" @buyProduct="buyProduct" />
+        <products v-else 
+          :listProduct="getProduct" 
+          @buyProduct="buyProduct" 
+          @favoriteProduct="favoriteProduct"
+        />
       </div>
 
       <categoriesPage />

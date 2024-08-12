@@ -23,6 +23,10 @@ const listProduct = computed(() => {
 function buyProduct(product: IProduct) {
   console.log(product);
 }
+
+function favoriteProduct(product: IProduct) {
+  console.log(product);
+}
 </script>
 
 <template>
@@ -43,6 +47,10 @@ function buyProduct(product: IProduct) {
       </button>
     </div>
 
-    <products :listProduct="listProduct" @buyProduct="buyProduct" />
+    <products 
+      :listProduct="listProduct" 
+      @buyProduct="buyProduct" 
+      @favoriteProduct="favoriteProduct"
+    />
   </div>
 </template>

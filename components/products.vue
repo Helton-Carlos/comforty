@@ -7,11 +7,16 @@ defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'buyProduct'): IProduct[];
+  (e: 'buyProduct', product: IProduct): void;
+  (e: 'favoriteProduct', product: IProduct): void;
 }>();
 
-function buyProduct(product: IProduct | undefined) {
+function buyProduct(product: IProduct): void {
   emit('buyProduct', product);
+}
+
+function favoriteProduct(product: IProduct): void {
+  emit('favoriteProduct', product);
 }
 </script>
 
@@ -42,7 +47,12 @@ function buyProduct(product: IProduct | undefined) {
               {{ list.categorie }}
             </span>
 
-            <button class="p-1 rounded-md bg-white"><IconHeart /></button>
+            <button 
+              class="p-1 rounded-md bg-white" 
+              @favoriteProduct="favoriteProduct(list)"
+            >
+              <IconHeart />
+            </button>
           </div>
 
           <img class="w-full" :src="list.image" :alt="list.name" />
