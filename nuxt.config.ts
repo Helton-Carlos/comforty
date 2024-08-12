@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     {path: '~/shared/icons', prefix: 'Icon'}, '~/components'
   ],
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
   ],
   app: {
     head: {

@@ -19,3 +19,24 @@ export interface IDepositions {
   job: string
 }
 
+export interface IUser {
+  name: string,
+  email: string,
+  password?: string,
+  cart?: string[],
+  card?: string[]
+}
+
+export interface IMessage {
+  title: string;
+  style: string;
+}
+
+export interface ILogin {
+  name?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?:string;
+} 
+
+
