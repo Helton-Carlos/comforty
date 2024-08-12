@@ -76,7 +76,8 @@ function favoriteProduct(product: IProduct) {
           <p>Ocorreu um erro: {{ status }}</p>
         </div>
 
-        <products v-else 
+        <products 
+          v-else 
           :listProduct="getProduct" 
           @buyProduct="buyProduct" 
           @favoriteProduct="favoriteProduct"
@@ -104,7 +105,11 @@ function favoriteProduct(product: IProduct) {
           </button>
         </div>
 
-        <products :listProduct="listProduct" @buyProduct="buyProduct" />
+        <products 
+          :listProduct="listProduct" 
+          @buyProduct="buyProduct" 
+          @favoriteProduct="favoriteProduct"
+        />
       </div>
 
       <depositions />
@@ -112,7 +117,11 @@ function favoriteProduct(product: IProduct) {
       <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
         <h3 class="font-bold text-xl">Novidades da loja</h3>
 
-        <products :listProduct="getProduct" @buyProduct="buyProduct" />
+        <products 
+          :listProduct="getProduct" 
+          @buyProduct="buyProduct" 
+          @favoriteProduct="favoriteProduct"
+        />
       </div>
     </div>
   </div>

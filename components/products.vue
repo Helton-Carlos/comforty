@@ -49,7 +49,7 @@ function favoriteProduct(product: IProduct): void {
 
             <button 
               class="p-1 rounded-md bg-white" 
-              @favoriteProduct="favoriteProduct(list)"
+              @click="favoriteProduct(list)"
             >
               <IconHeart />
             </button>
