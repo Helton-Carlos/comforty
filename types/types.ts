@@ -1,8 +1,10 @@
 export interface IProduct {
+  id?: number | any,
   name: string,
   price?: number,
   beforePrice?: number | null,
   categorie?: string,
+  type: 'plastic' | 'tissue' | 'old',
   image: string,
   unid?: number
 }
@@ -38,5 +40,10 @@ export interface ILogin {
   password?: string;
   confirmPassword?:string;
 } 
+
+export interface ICart {
+  id: number,
+  amount: number
+}
 
 

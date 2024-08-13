@@ -9,12 +9,14 @@ import chairImage4 from '~/assets/categories/chair_categories_4.png';
 
 export const chairList = [
   {
+    id: 5,
     name: 'Chair Plastic',
     price: 99.99,
     categorie: 'novo',
     image: chairImage
   },
   {
+    id: 6,
     name: 'Chair Plastic Orange',
     price: 299.99,
     beforePrice: 350.99,
@@ -22,6 +24,7 @@ export const chairList = [
     image: chairPlastic
   },
   {
+    id: 7,
     name: 'Chair Plastic White',
     price: 200.99,
     categorie: 'comforto',
@@ -29,33 +32,38 @@ export const chairList = [
     image: chairPlasticWhite
   },
   {
+    id: 8,
     name: 'Chair Wooder',
     price: 250.99,
     categorie: 'mais vendidos',
     image: chairLibrary
   },
   {
+    id: 9,
     name: 'Chair Conforty',
     price: 299.99,
     categorie: 'novo',
     image: chairImage4
   },
   {
-    name: 'Wooden Chair',
-    price: 299.99,
-    categorie: 'mais vendidos',
-    image: chairImage2
-  },
-  {
+    id: 10,
     name: 'Desk Chair',
     price: 299.99,
     categorie: 'comforto',
     image: chairImage3
   },
   {
+    id: 11,
     name: 'Wing Chair',
     price: 299.99,
     categorie: 'novo',
     image: chairImage1
+  },
+  {
+    id: 12,
+    name: 'Wooden Chair',
+    price: 299.99,
+    categorie: 'mais vendidos',
+    image: chairImage2
   },
 ];

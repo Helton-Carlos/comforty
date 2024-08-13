@@ -1,23 +1,13 @@
 <script setup lang="ts">
 import { convertMoney } from '~/utils/convertMoney';
 import type { IProduct } from '~/types/types';
+import { buyStore } from '~/store/buy';
+
+const $store = buyStore();
 
 defineProps<{
   listProduct: IProduct[];
 }>();
-
-const emit = defineEmits<{
-  (e: 'buyProduct', product: IProduct): void;
-  (e: 'favoriteProduct', product: IProduct): void;
-}>();
-
-function buyProduct(product: IProduct): void {
-  emit('buyProduct', product);
-}
-
-function favoriteProduct(product: IProduct): void {
-  emit('favoriteProduct', product);
-}
 </script>
 
 <template>
@@ -49,7 +39,7 @@ function favoriteProduct(product: IProduct): void {
 
             <button 
               class="p-1 rounded-md bg-white" 
-              @click="favoriteProduct(list)"
+              @click="$store.favoriteProduct(list?.id)"
             >
               <IconHeart />
             </button>
@@ -68,7 +58,7 @@ function favoriteProduct(product: IProduct): void {
 
           <button
             class="p-1 px-3 rounded-md bg-gray hover:bg-primary"
-            @click="buyProduct(list)"
+            @click="$store.buyProduct(list?.id)"
           >
             <IconCart />
           </button>

@@ -7,6 +7,7 @@ import type { IProduct } from '~/types/types';
 
 const chairList = ref<IProduct[]>([
   {
+    id: 14,
     name: 'Chair Plastic Orange',
     price: 299.99,
     beforePrice: 350.99,
@@ -14,31 +15,26 @@ const chairList = ref<IProduct[]>([
     image: chairPlastic,
   },
   {
+    id: 15,
     name: 'Chair Plastic White',
     price: 200.99,
     beforePrice: 320.99,
     image: chairPlasticWhite,
   },
   {
+    id: 16,
     name: 'Chair Wooder',
     price: 250.99,
     image: chairLibrary,
   },
   {
+    id: 17,
     name: 'Chair Plastic',
     price: 99.99,
     categorie: 'novo',
     image: chairImage,
   },
 ]);
-
-function buyProduct(product: IProduct) {
-  console.log(product);
-}
-
-function favoriteProduct(product: IProduct) {
-  console.log(product);
-}
 </script>
 <template>
   <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
@@ -46,8 +42,6 @@ function favoriteProduct(product: IProduct) {
 
     <products 
       :list-product="chairList" 
-      @buyProduct="buyProduct" 
-      @favoriteProduct="favoriteProduct"
     />
   </div>
 </template>

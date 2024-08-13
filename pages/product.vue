@@ -19,14 +19,6 @@ function filterCategories(categorie: string) {
 const listProduct = computed(() => {
   return product.value ? product.value : chairList;
 });
-
-function buyProduct(product: IProduct) {
-  console.log(product);
-}
-
-function favoriteProduct(product: IProduct) {
-  console.log(product);
-}
 </script>
 
 <template>
@@ -49,8 +41,6 @@ function favoriteProduct(product: IProduct) {
 
     <products 
       :listProduct="listProduct" 
-      @buyProduct="buyProduct" 
-      @favoriteProduct="favoriteProduct"
     />
   </div>
 </template>
