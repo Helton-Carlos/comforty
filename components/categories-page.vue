@@ -1,38 +1,7 @@
 <script setup lang="ts">
-import chairImage1 from '~/assets/categories/chair_categories_1.png';
-import chairImage2 from '~/assets/categories/chair_categories_2.png';
-import chairImage3 from '~/assets/categories/chair_categories_3.png';
-import chairImage4 from '~/assets/categories/chair_categories_4.png';
-import chairImage5 from '~/assets/categories/chair_categories_5.png';
 import type { IProduct } from '~/types/types';
 
-const chairList = ref<IProduct[]>([
-  {
-    name: 'Chair Conforty',
-    unid: 3.584,
-    image: chairImage4,
-  },
-  {
-    name: 'Wooden Chair',
-    unid: 1.574,
-    image: chairImage2,
-  },
-  {
-    name: 'Desk Chair',
-    unid: 3.512,
-    image: chairImage3,
-  },
-  {
-    name: 'Wing Chair',
-    unid: 1.122,
-    image: chairImage1,
-  },
-  {
-    name: 'Park Chair',
-    unid: 1.127,
-    image: chairImage5,
-  },
-]);
+const chairList = ref<IProduct[]>([]);
 </script>
 
 <template>

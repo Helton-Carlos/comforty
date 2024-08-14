@@ -1,24 +1,10 @@
 <script setup lang="ts">
-import type { IProduct } from '~/types/types';
-import { chairList } from '~/utils/product';
-
 const categories = ref<string[]>([
   'novo',
   'lançamento',
   'comforto',
   'mais vendidos',
 ]);
-const selectedCategory = ref<string>('');
-const product = ref<IProduct[]>();
-
-function filterCategories(categorie: string) {
-  selectedCategory.value = categorie;
-  product.value = chairList.filter((item) => item.categorie === categorie);
-}
-
-const listProduct = computed(() => {
-  return product.value ? product.value : chairList;
-});
 </script>
 
 <template>

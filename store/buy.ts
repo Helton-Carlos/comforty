@@ -26,7 +26,7 @@ export const buyStore = defineStore('store-buy', {
       if(local) return this.cart = JSON.parse(local);
     },
 
-    async getProcuts() {
+    async getProducts() {
       const { products } = await fetch('http://localhost:3000/api/v1/product').then((resp)=>{
         return resp.json();
       }).catch((err)=>{
@@ -37,7 +37,7 @@ export const buyStore = defineStore('store-buy', {
     },
 
     async buyProduct(productID: number) {
-      const products = await this.getProcuts(); 
+      const products = await this.getProducts(); 
       
       if(products) {
         console.log(products);
@@ -46,7 +46,7 @@ export const buyStore = defineStore('store-buy', {
     },
 
     async favoriteProduct(productID: number) {
-      const products = await this.getProcuts(); 
+      const products = await this.getProducts(); 
       
       if(products) {
         console.log(products);

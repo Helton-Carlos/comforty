@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@types/pg": "^8.11.6",
+    "@vueuse/core": "^10.11.1",
+    "@vueuse/nuxt": "^10.11.1",
     "prisma": "^5.17.0"
   }
 }

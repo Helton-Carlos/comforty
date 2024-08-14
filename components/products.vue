@@ -6,7 +6,7 @@ import { buyStore } from '~/store/buy';
 const $store = buyStore();
 
 defineProps<{
-  listProduct: IProduct[];
+  listProduct: IProduct[] | undefined | any;
 }>();
 </script>
 

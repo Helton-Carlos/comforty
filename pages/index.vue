@@ -1,54 +1,10 @@
 <script setup lang="ts">
-import chairImage from '~/assets/product/Chair_image.png';
-import chairPlastic from '~/assets/product/Chair_Plastic_orange.png';
-import chairPlasticWhite from '~/assets/product/Chair_Plastic_white.png';
-import chairLibrary from '~/assets/product/Library_Stool_ Chair.png';
-import type { IProduct } from '~/types/types';
-import { chairList } from '~/utils/product';
-
-const {
-  data,
-  pending,
-  error,
-  status,
-} = await useFetch('http://localhost:3000/api/v1/product', {
-  lazy: true,
-});
-
-const imageMap: { [key: string]: string } ={
-  chairImage: chairImage,
-  chairPlastic: chairPlastic,
-  chairPlasticWhite: chairPlasticWhite,
-  chairLibrary: chairLibrary,
-};
-
 const categories = ref<string[]>([
   'novo',
   'lançamento',
   'comforto',
   'mais vendidos',
 ]);
-
-const selectedCategory = ref<string>('');
-const product = ref<IProduct[]>();
-
-function filterCategories(categorie: string) {
-  selectedCategory.value = categorie;
-  product.value = chairList.filter((item) => item.categorie === categorie);
-}
-
-const getProduct = computed(() => {
-  let { products }: IProduct[] | any = data.value;
-
-  return products.map((product: { image: string }) => ({
-    ...product,
-    image: imageMap[product.image] || product.image,
-  }));
-});
-
-const listProduct = computed(() => {
-  return product.value ? product.value : chairList;
-});
 </script>
 
 <template>
@@ -59,17 +15,8 @@ const listProduct = computed(() => {
     <div>
       <div class="w-[85%] mx-auto py-8 lg:w-[70%]">
         <h3 class="text-xl font-bold text-center mt-10">Nossos Produtos</h3>
-
-        <div v-if="pending">
-          <p>Aguarde...</p>
-        </div>
-
-        <div v-else-if="error">
-          <p>Ocorreu um erro: {{ status }}</p>
-        </div>
-
+     
         <products 
-          v-else 
           :listProduct="getProduct" 
         />
       </div>
