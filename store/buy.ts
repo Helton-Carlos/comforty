@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { userAuth } from './auth';
 import type { ICart } from '~/types/types';
 
 export const buyStore = defineStore('store-buy', {
@@ -7,7 +8,8 @@ export const buyStore = defineStore('store-buy', {
       cart: [],
       favorite: [],
       localCart: 'CM_CART',
-      localFavorite: 'CM_FAVORITE'
+      localFavorite: 'CM_FAVORITE',
+      modal: false,
     }
   },
 
@@ -38,20 +40,32 @@ export const buyStore = defineStore('store-buy', {
 
     async buyProduct(productID: number) {
       const products = await this.getProducts(); 
-      
-      if(products) {
-        console.log(products);
-        console.log(productID);
-      };    
+
+      const { getLocalUser } = userAuth();
+
+      if(getLocalUser()) {
+        if(products) {
+          console.log(products);
+          console.log(productID);
+        };
+      } else {
+        this.modal = true;  
+      }
     },
 
     async favoriteProduct(productID: number) {
       const products = await this.getProducts(); 
-      
-      if(products) {
-        console.log(products);
-        console.log(productID);
-      };
+
+      const { getLocalUser } = userAuth();
+
+      if(getLocalUser()) {
+        if(products) {
+          console.log(products);
+          console.log(productID);
+        };
+      } else { 
+        this.modal = true;   
+      }
     }
   }
 })

@@ -27,9 +27,9 @@ const listDepositions = ref<IDepositions[]>([
     <div class="w-[85%] mx-auto py-4 lg:w-[70%]">
       <h3 class="font-bold text-xl my-8">Depoimentos dos nossos clientes</h3>
 
-      <div class="md:flex md:justify-between gap-4">
+      <div class="mx-auto md:flex md:justify-between md:w-[85%] md:gap-4">
         <div
-          class="w-full bg-white p-8 rounded-md shadow-md sm:mb-4 md:w-[648px]"
+          class="w-full bg-white p-8 rounded-md shadow-md mb-4 md:w-[648px]"
           v-for="list in listDepositions"
           :key="list.name"
         >
