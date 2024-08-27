@@ -12,7 +12,7 @@ defineEmits<{
 <template>
   <div
     v-if="openModal"
-    class="fixed left-0 z-50 top-0 right-0 min-w-full min-h-full bg-dark bg-opacity-75 transition-opacity"
+    class="fixed left-0 z-50 top-0 right-0 min-w-full min-h-full bg-dark bg-opacity-5 transition-opacity"
   >
     <div class="fixed inset-0">
       <div

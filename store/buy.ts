@@ -9,7 +9,8 @@ export const buyStore = defineStore('store-buy', {
       favorite: [],
       localCart: 'CM_CART',
       localFavorite: 'CM_FAVORITE',
-      modal: false,
+      modalBuy: false,
+      modalAuth: false,
     }
   },
 
@@ -38,24 +39,36 @@ export const buyStore = defineStore('store-buy', {
       return products;
     },
 
-    async buyProduct(productID: number) {
+    async addCart(productID: number) {
       const products = await this.getProducts(); 
-
       const { getLocalUser } = userAuth();
 
       if(getLocalUser()) {
-        if(products) {
-          console.log(products);
-          console.log(productID);
+        if(products) { 
+          this.buyProduct(productID);
+          
+          this.modalBuy = false;
         };
       } else {
-        this.modal = true;  
+        this.modalBuy = false;
+        this.modalAuth = true;  
+      }
+    },
+
+    async buyProduct(productID: number) {
+      const { getLocalUser } = userAuth();
+
+      if(getLocalUser()) {
+        if(productID) {
+          console.log(productID);
+        };
+      } else { 
+        this.modalAuth = true;   
       }
     },
 
     async favoriteProduct(productID: number) {
       const products = await this.getProducts(); 
-
       const { getLocalUser } = userAuth();
 
       if(getLocalUser()) {
@@ -64,7 +77,7 @@ export const buyStore = defineStore('store-buy', {
           console.log(productID);
         };
       } else { 
-        this.modal = true;   
+        this.modalAuth = true;   
       }
     }
   }
