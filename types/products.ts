@@ -6,7 +6,7 @@ import chairImage1 from '~/assets/categories/chair_categories_1.png';
 import chairImage2 from '~/assets/categories/chair_categories_2.png';
 import chairImage3 from '~/assets/categories/chair_categories_3.png';
 import chairImage4 from '~/assets/categories/chair_categories_4.png';
-import type { IProduct } from '~/types/types';
+import type { IProduct, ApiResponse } from '~/types/types';
 
 const product = ref<IProduct[]>();
 const allProducts = ref<IProduct[] | undefined | any>();
@@ -24,19 +24,23 @@ const imageMap: { [key: string]: string } ={
 };
 
 async function getAllProducts() { 
-  const { products } = await fetch('http://localhost:3000/api/v1/product').then((resp)=>{
-    return resp.json();
-  }).catch((err)=>{
-    console.error(err);
-  });
+  try {
+    const { data } = await useFetch<ApiResponse>('http://localhost:3000/api/v1/product');
 
-  return allProducts.value = products;
+      if (data && data.value) {
+          const { products } = data?.value;
+          allProducts.value = products; 
+          return products;
+      }
+    } catch (error) {
+        console.error('Erro ao buscar produtos:', error);
+    }
 }
 
 function filterCategories(categorie: string) { 
   selectedCategory.value = categorie;
 
- product.value = allProducts.value.filter((item: { categorie: string; }) => item.categorie === categorie);
+  product.value = allProducts.value.filter((item: { categorie: string; }) => item.categorie === categorie);
 }
 
 const getProduct = computed(() => {

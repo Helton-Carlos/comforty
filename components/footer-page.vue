@@ -8,6 +8,8 @@ const email = ref<string>('');
 
 const cards = ref<string[]>([master, visa, paypal, americanExpress]);
 
+const helpList = ref<string[]>(['Suporte', 'Política de privacidade', 'Ajuda']);
+
 const menuList = ref<string[]>([
   'Home',
   'Shop',
@@ -15,8 +17,6 @@ const menuList = ref<string[]>([
   'Páginas',
   'Sobre',
 ]);
-
-const helpList = ref<string[]>(['Suporte', 'Política de privacidade', 'Ajuda']);
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const helpList = ref<string[]>(['Suporte', 'Política de privacidade', 'Ajuda'])
       class="w-[85%] block md:flex items-start gap-2 mx-auto py-8 justify-between lg:w-[70%]"
     >
       <div>
-        <nuxt-link to="/" class="flex items-center gap-2 mt-2">
+        <nuxt-link data-test="footer-link-main" to="/" class="flex items-center gap-2 mt-2">
           <IconLogo />
           <h1 class="font-medium text-xl text-dark">Comforty</h1>
         </nuxt-link>
@@ -43,7 +43,7 @@ const helpList = ref<string[]>(['Suporte', 'Política de privacidade', 'Ajuda'])
         </p>
 
         <ul v-for="list in menuList" :key="list">
-          <li class="text-dark font-semibold cursor-pointer hover:text-primary">
+          <li data-test="footer-list" class="text-dark font-semibold cursor-pointer hover:text-primary">
             {{ list }}
           </li>
         </ul>

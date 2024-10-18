@@ -29,6 +29,7 @@ const listDepositions = ref<IDepositions[]>([
 
       <div class="mx-auto md:flex md:justify-between md:w-[85%] md:gap-4">
         <div
+          data-test="list-depositions"
           class="w-full bg-white p-8 rounded-md shadow-md mb-4 md:w-[648px]"
           v-for="list in listDepositions"
           :key="list.name"
@@ -37,6 +38,7 @@ const listDepositions = ref<IDepositions[]>([
             <div class="col-color"></div>
 
             <p
+              data-test="list-name"
               class="text-base text-gray-dark font-normal p-4 pr-4 md:text-[18px]"
             >
               {{ list.depositions }}
@@ -46,6 +48,7 @@ const listDepositions = ref<IDepositions[]>([
           <div class="flex justify-between">
             <div class="flex items-center gap-2">
               <img
+                data-test="list-image"
                 :src="list.image"
                 alt="imagem do rosto de cliente que escreveu o depoimento."
               />

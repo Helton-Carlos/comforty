@@ -18,7 +18,8 @@ const chairList = ref<IProduct[]>([]);
       >
         <div class="mx-2">
           <img
-            class="min-w-[200px] md:w-full"
+            data-test-id="categories-list"
+            class="min-w-[200px] md:w-full "
             :src="list.image"
             :alt="list.name"
           />

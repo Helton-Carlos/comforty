@@ -1,5 +1,5 @@
 <script setup lang="ts"> 
-import { getProduct } from '~/utils/products'
+import { getProduct } from '~/types/products'
 </script>
 
 <template>

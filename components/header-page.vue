@@ -1,24 +1,32 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
 const item = ref<boolean>(false);
 
 function showItem() {
   item.value = !item.value;
 }
+
+const pathUpdate = computed(()=>{
+  return route?.path;
+})
 </script>
 
 <template>
-  <header class="w-full bg-gray text-white text-sm py-5">
+  <header class="bg-gray text-white text-sm py-5">
     <div
       class="w-[85%] block md:flex md:justify-center md:items-center mx-auto lg:w-[70%] gap-4"
     >
-      <nuxt-link to="/" class="flex items-center">
+      <nuxt-link data-test="header-link-main" to="/" class="flex items-center">
         <IconLogo />
         <h1 class="font-medium text-xl text-dark">Comforty</h1>
       </nuxt-link>
 
       <div>
         <input
-          class="w-full text-dark rounded-md p-3.5 my-3 lg:mx-2 lg:w-[413px] outline-none"
+          class="w-full text-dark rounded-md p-3.5 my-3 outline-none lg:mx-2 lg:w-[413px]"
           type="text"
           placeholder="Pesquisar..."
         />
@@ -27,6 +35,7 @@ function showItem() {
       <div class="flex gap-4">
         <div>
           <button
+            data-test="header-button-cart"
             class="w-full p-3 flex items-center gap-2 bg-white text-dark font-medium rounded-md"
             aria-label="Carro-de-compras"
             @click="showItem"
@@ -39,7 +48,7 @@ function showItem() {
             v-if="item" 
             class="w-[250px] bg-white text-dark font-medium p-3 flex items-center gap-2 rounded-md absolute top-60 shadow-md md:top-32"
           >
-            <div class="underline text-base mx-auto">
+            <div data-test="header-list-cart" class="underline text-base mx-auto">
               0 item
             </div>
           </div>
@@ -48,12 +57,13 @@ function showItem() {
         <button class="p-3 rounded-md bg-white" aria-label="Favoritos">
           <IconHeart />
         </button>
-
+        
         <nuxt-link
+          data-test="header-link-user"
           :class="{
             'p-3 rounded-md hover:bg-primary': true,
-            'bg-primary': $route.path === '/user',
-            'bg-white': $route.path !== '/user',
+            'bg-primary': pathUpdate === '/user',
+            'bg-white': pathUpdate !== '/user',
           }"
           to="/user"
         >

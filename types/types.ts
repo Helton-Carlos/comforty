@@ -9,6 +9,10 @@ export interface IProduct {
   unid?: number
 }
 
+export interface ApiResponse {
+  products: IProduct[];
+}
+
 export interface IMenu {
   name: string,
   path: string,

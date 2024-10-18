@@ -48,12 +48,13 @@ function increment(): void {
     class="w-[90%] mx-auto p-4 py-8 bg-[url('assets/imagem/banner.png')] bg-no-repeat bg-center bg-cover lg:w-[70%]"
   >
     <div class="flex justify-between items-center px-2 py-8">
-      <div
+      <span
+        data-test="main-button-decrement"
         class="hidden md:block bg-white w-[48px] h-[48px] rounded-full text-white m-2 hover:bg-primary"
         @click="decrement"
       >
         <IconArrowLeft class="my-3.5 mx-3" />
-      </div>
+      </span>
 
       <div class="pl-4 flex md:gap-10 md:mt-8">
         <div class="md:w-[370px]">
@@ -88,6 +89,7 @@ function increment(): void {
       </div>
 
       <span
+        data-test="main-button-increment"
         class="hidden md:block bg-white w-[48px] h-[48px] rounded-full text-white m-2 shadow hover:bg-primary"
         @click="increment"
       >

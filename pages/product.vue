@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { selectedCategory, listProduct, filterCategories } from '~/types/products'
+
 const categories = ref<string[]>([
   'novo',
   'lançamento',

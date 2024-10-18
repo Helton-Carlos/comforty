@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/nuxt',
+    '@nuxt/test-utils/module'
   ],
   app: {
     head: {
