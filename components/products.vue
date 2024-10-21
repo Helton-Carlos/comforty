@@ -24,6 +24,7 @@ function openModal() {
     class="block md:flex md:justify-center md:flex-wrap md:flex-shrink md:gap-7"
   >
     <div
+      data-test="products-list"
       class="w-full md:w-[280px] lg:[300px]"
       v-for="list in listProduct"
       :key="list.name"
@@ -33,6 +34,7 @@ function openModal() {
           class="relative top-14 pt-4 px-4 flex justify-between items-start"
         >
           <span
+            data-test="products-list-categories"
             v-if="list.categorie"
             :class="[
               'text-white px-3 py-1 rounded-full text-sm',

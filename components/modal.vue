@@ -25,6 +25,7 @@ defineEmits<{
               class="flex justify-end pt-4 pr-4"
             >
               <IconClosed 
+                data-test="modal-close"
                 class="cursor-pointer hover:scale-125" 
                 @click="$emit('closedModal')"
               />

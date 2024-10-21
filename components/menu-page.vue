@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { IMenu } from '~/types/types';
+import { useRoute } from 'vue-router';
 
 const menuList = ref<IMenu[]>([
   { name: 'Home', path: '/' },
@@ -9,6 +10,12 @@ const menuList = ref<IMenu[]>([
 ]);
 
 const menu = ref<boolean>(false);
+
+const route = useRoute();
+
+const pathUpdate = computed(()=>{
+  return route?.path;
+})
 
 function openMenu() {
   menu.value = !menu.value;
@@ -21,6 +28,7 @@ function openMenu() {
       <div class="w-[85%] flex justify-between items-center mx-auto lg:w-[70%]">
         <div class="flex gap-2 md:gap-8">
           <button
+            data-test="menu-button-open"
             class="bg-white flex items-center gap-2 p-2.5 rounded-md font-bold border-2 border-gray"
             @click="openMenu()"
           >
@@ -35,10 +43,11 @@ function openMenu() {
           >
             <li>
               <nuxt-link
+                data-test="menu-list"
                 :to="list.path"
                 :class="[
                   'font-bold cursor-pointer hover:text-primary hover:underline',
-                  { 'text-primary underline': $route.path === list.path },
+                  { 'text-primary underline': pathUpdate === list.path },
                 ]"
               >
                 {{ list.name }}
@@ -56,6 +65,7 @@ function openMenu() {
 
     <div
       v-if="menu"
+      data-test="menu-open-mobile"
       class="w-[350px] h-screen z-50 bg-white border-2 border-gray text-dark shadow-md text-sm py-4 absolute top-0"
     >
       <div class="w-[90%] flex justify-end">
@@ -67,7 +77,11 @@ function openMenu() {
         </button>
       </div>
 
-      <nuxt-link to="/" class="flex items-center justify-center gap-1 my-7">
+      <nuxt-link
+       data-test="menu-link-main"
+       class="flex items-center justify-center gap-1 my-7"
+       to="/" 
+      >
         <IconLogo />
         <h1 class="font-medium text-xl text-dark">Comforty</h1>
       </nuxt-link>

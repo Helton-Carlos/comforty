@@ -5,13 +5,14 @@ const route = useRoute();
 
 const item = ref<boolean>(false);
 
+const pathUpdate = computed(()=>{
+  return route?.path;
+})
+
 function showItem() {
   item.value = !item.value;
 }
 
-const pathUpdate = computed(()=>{
-  return route?.path;
-})
 </script>
 
 <template>

@@ -42,6 +42,7 @@ const companyList = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
         class="flex justify-start flex-wrap gap-8 mx-auto p-2 sm:justify-center md:justify-center"
       >
         <div
+          data-test="service-list"
           class="flex items-center gap-2"
           v-for="list in serviceList"
           :key="list.title"
@@ -49,8 +50,8 @@ const companyList = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
           <img :src="list.image" :alt="list.title" />
 
           <div>
-            <p class="font-bold">{{ list.title }}</p>
-            <p>{{ list.subtitle }}</p>
+            <p class="font-bold" data-test="service-list-title">{{ list.title }}</p>
+            <p data-test="service-list-sub-title">{{ list.subtitle }}</p>
           </div>
         </div>
       </div>
@@ -67,7 +68,7 @@ const companyList = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
           v-for="list in companyList"
           :key="list"
         >
-          <img :src="list" :alt="list" />
+          <img data-test="section-company-image" :src="list" :alt="list" />
         </div>
       </div>
     </div>
