@@ -48,6 +48,7 @@ function singIn() {
     <form class="w-[380px] bg-gray flex flex-col gap-2 p-4" @submit.prevent="singIn">
       <label for="email">E-mail</label>
       <input
+        data-test="user-input-email"
         class="p-2 rounded shadow"
         type="email"
         name="email"
@@ -58,6 +59,7 @@ function singIn() {
 
       <label for="password">Senha</label>
       <input
+        data-test="user-input-password"
         class="p-2 rounded shadow"
         type="password"
         name="password"
@@ -67,6 +69,7 @@ function singIn() {
       />
 
       <input
+        data-test="user-submit"
         class="bg-primary text-white mt-2 px-4 py-2 rounded shadow hover:bg-green"
         type="submit"
         name="submit"
@@ -86,6 +89,7 @@ function singIn() {
 
       <div 
         v-if="message.title" 
+        data-test="user-message"
         :class="['px-2 py-1 text-center rounded-lg shadow', message.style]"
       >
         <p class="text-white">{{ message.title }}</p>
