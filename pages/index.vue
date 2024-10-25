@@ -19,6 +19,7 @@ const categories = ref<string[]>([
         <h3 class="text-xl font-bold text-center mt-10">Nossos Produtos</h3>
      
         <products 
+          data-test="index-products"
           :listProduct="getProduct" 
         />
       </div>
@@ -29,8 +30,9 @@ const categories = ref<string[]>([
         <h3 class="text-xl font-bold text-center mt-10">Todos Produtos</h3>
 
         <div class="mx-auto flex justify-center mt-4">
-          <button v-for="categorie in categories" :key="categorie">
+          <button data-test="index-button-categories" v-for="categorie in categories" :key="categorie">
             <span
+              data-test="index-categories"
               :class="[
                 'font-medium mx-4 capitalize pb-1',
                 {
